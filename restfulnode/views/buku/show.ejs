@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Toko Buku</title>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    
+    <body>
+        <div class="container">            
+            <div class="thumbnail">
+                <img class="img-responsive" src="<%=buku.urlGambar%>">
+                <div class="caption">
+                    <h4>Judul Buku : <strong><%=buku.judul%></strong></h4>
+                    <h4>Harga : <strong>Rp. <%= buku.harga %></strong></h4>
+                    <h4> Pengarang : <strong><%= buku.pengarang %></strong></h4>
+                    
+                    <a class="btn btn-info" href="/buku/<%= buku._id %>/edit">Edit</a>
+                    
+                    <form action="/buku/<%= buku._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
